@@ -1,165 +1,119 @@
+<section class="call-to-action-two py-0">
+    <div class="container">
+        <div class="outer-box wow d-block d-sm-flex fadeIn">
+            <div class="title-box">
+                <h3 class="title">متخصصون في تصميم وتنفيذ جميع اعمال الزجاج بأفضل الخامات وأحسن الأسعار</h3>
+            </div>
 
+            <div class="btn-box"><a class="theme-btn btn-style-three" href="services.html"><span class="btn-title">خدمات اكثر</span></a></div>
+        </div>
+    </div>
+</section>
 
-<footer class="footer-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="footer_box">
-                    <div class="footer_logo">
-                        <img src="{{asset('front/img/logo.png')}}" class="img-fluid" alt="الماسه" />
-                    </div>
-                    <div class="content">
-                        <h2> {{ $settings->website_name }}</h2>
-                        <p>تشطيبات معماريه وتصميم داخلي وديكور.</p>
-                        <p>
-                            <strong>
-                                <a href="#"> إرسل طلبك الاَن </a>
-                            </strong>
-                        </p>
+<footer class="main-footer style-one">
+    <div class="bg-image" style="background-image: url(./assets/img/5.jpg)"></div>
+    <!--Widgets Section-->
+
+    <div class="widgets-section">
+        <div class="container">
+            <div class="row"><!--Footer Column-->
+                <div class="footer-column col-xl-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <div class="logo"><a href="index.html"><img alt="" src="./assets/img/logo.jpg" /></a></div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="footer_box">
-                    <div class="footer_title">
-                        <h2>تواصل معنا</h2>
-                    </div>
-                    <div class="content">
-                        <ul>
-                            <li><i class="fas fa-house"></i> شركة  {{ $settings->website_name }} </li>
-                            <li><i class="fas fa-map"></i> {{ $contact->translate(app()->getLocale())->address }}</li>
-                            <li><i class="fas fa-clock"></i> خدمة 24/7</li>
-                            
-                            @if($social->phone_option)
-                                <li>
-                                    <a href="tel:{{$social->phone }}">
-                                        <i class="fas fa-phone"></i>  
-                                        <span dir="ltr">{{ $social->phone }}</span>
-                                    </a>   
-                                </li>
-                            @endif
+                <!--Footer Column-->
 
-                            
+                <div class="footer-column col-xl-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3 class="widget-title">خدمات</h3>
+
+                        <ul class="user-links">
+                            <li><a href="#">Reliability &amp; Punctuality</a></li>
+                            <li><a href="#">Trusted Franchise</a></li>
+                            <li><a href="#">Warehoues Storage</a></li>
+                            <li><a href="#">Real Time Tracking</a></li>
+                            <li><a href="#">Transparent Pricing</a></li>
                         </ul>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="counter-social-links">
-                                <ul class="clearfix">
-                                    @if($social->facebook_option)
-                                    <li class="facebook">
-                                        <a href="{{$social->facebook}}"
-                                        ><span class="fab fa-facebook-square"></span
-                                            ></a>
-                                    </li>
-                                    @endif
+                </div>
+                <!--Footer Column-->
 
-                                    @if($social->email)
-                                    <li class="pinterest">
-                                        <a href="mailto:{{$social->email}}"
-                                        ><span class="fas fa-envelope"></span
-                                            ></a>
-                                    </li>
-                                @endif
-    
-                                @if($social->whatsup_option)
-                                    <li class="whatsapp">
-                                        <a href="https://wa.me/{{$social->whatsup}}"
-                                        ><span class="fab fa-whatsapp"></span
-                                            ></a>
-                                    </li>
-                                @endif
+                <div class="footer-column col-xl-3 col-sm-6">
+                    <div class="footer-widget gallery-widget">
+                        <h3 class="widget-title">المشاريع</h3>
 
+                        <ul class="user-links two-column">
+                            <li><a href="#">من نحن</a></li>
+                            <li><a href="#">مشاريع جديدة</a></li>
+                            <li><a href="#">تاريخنا</a></li>
+                            <li><a href="#">اتصال</a></li>
+                            <li><a href="#">مشاركة مدونة</a></li>
+                            <li><a href="#">سياسة الخصوصية</a></li>
+                            <li><a href="#">شروط الاستخدام</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--Footer Column-->
 
-                                @if($social->phone_option)
-                                <li class="facebook">
-                                    <a href="tel:{{$social->phone}}"
-                                    ><span class="fas fa-phone"></span
-                                        ></a>
-                                </li>
-                                @endif
-                                </ul>
+                <div class="footer-column col-xl-3 col-sm-6">
+                    <div class="footer-widget">
+                        <h3 class="widget-title">اتصل بنا</h3>
+
+                        <div class="widget-content">
+                            <div class="subscribe-form">
+                                <div class="text text-truncate">اشترك في النشرة الإخبارية لدينا للحصول على آخر التحديثات والأخبار</div>
+                                <!-- <p class="text mb-2">012 Broklyn Street, 57 <br class="d-none d-xl-block"> New York, USA</p>
+                                                  <p class="mb-2"><a class="text" href="mailto:needhelp@domain.com">needhelp@domain.com</a></p>
+                                                  <p><a class="text-white" href="tel:9993330000">999 333 0000</a></p> -->
+
+                                <form action="#" method="post">
+                                    <div class="form-group"><input class="email" name="email" placeholder="عنوان البريد الإلكتروني" required="" type="email" value="" /><button class="theme-btn btn-style-one" type="button"></button></div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="footer_box">
-                    <div class="content">
-                        <ul class="products_list">
-                            <li>
-                                <a href="{{ route('services') }}"> الخدمات </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('about') }}"> من نحن </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('projects') }}"> مشاريعنا </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contact') }}"> اتصل بنا   </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('blog') }}"> المقالات</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="copyright-wrap">
-        <div class="container-fluid text-center">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p class="copyright-text">
-                        حقوق الطبع والنشر &copy; <a href="index.html"> {{ $settings->website_name }} </a> -
-                        <span id="currentYear"></span>
-                    </p>
+    <!--Footer Bottom-->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="inner-container">
+                <div class="copyright-text">
+                    <p>&copy; حقوق الطبع والنشر 2024 بواسطة <a href="index.html">AAG</a></p>
                 </div>
-                <div class="col-lg-6">
-                    <p class="copyright-text">
-                        <strong> ماس®</strong> للتشطيبات المعمارية والتصميم
-                        الداخلي والديكور
-                    </p>
-                </div>
+
+                <ul class="social-icon-two">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </div>
     </div>
 </footer>
+<!--End Main Footer -->
 
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-></script>
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"
-></script>
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-    integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-<script src="{{asset('front/assets/js/script.js')}}"></script>
+<div class="social-links-fixed">
+    <ul class="clearfix">
+        <li class="facebook"></li>
+        <li class="pinterest"></li>
+        <li class="whatsapp"></li>
+        <li class="support"></li>
+        <li class="twitter"></li>
+    </ul>
+</div>
 
-<script>
-    var currentYear = new Date().getFullYear();
-    document.getElementById('currentYear').textContent = currentYear;
-</script>
+<div class="cursor-helper">
+    <div class="cursor-helper-outer"></div>
 
-
-@yield('scripts')
-
-
-
-
-</body>
+    <div class="cursor-helper-inner"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{asset('front/assets/js/script.js')}}"></script></body>
 </html>

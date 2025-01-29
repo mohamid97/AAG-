@@ -1,306 +1,243 @@
-!function(e) {
+var
+    //selector vars
+    main_window = $(window),
+    root = $('html, body'),
+    bdyOnePage = $('body.landing-page-demo '),
+    pageHeader = $('#page-header'),
+    navMain = $('nav.menu-navbar'),
+    navMenuwrapper = $('.navbar-menu-wrapper'),
+    hasSubMenu = $(".has-sub-menu"),
+    onePage_menuLink = $('.landing-page-demo .menu-navbar .menu-link'),
+
+    // Measurements vars
+    navMainHeight = navMain.innerHeight(),
+
+    //class Names Strings vars
+
+    inputHasText = "has-text",
+
+    // condetionals vars
+    counterShowsUp = false;
+
+(function($) {
+
     "use strict";
-  
-    e.fn.thmobilemenu = function(t) {
-        var s = e.extend({
-            menuToggleBtn: ".th-menu-toggle",
-            bodyToggleClass: "th-body-visible",
-            subMenuClass: "th-submenu",
-            subMenuParent: "th-item-has-children",
-            subMenuParentToggle: "th-active",
-            meanExpandClass: "th-mean-expand",
-            appendElement: '<span class="th-mean-expand"><i class="fas fa-chevron-down"></i></span>',
-            subMenuToggleClass: "th-open",
-            toggleSpeed: 400
-        }, t);
-        return this.each((function() {
-            var t = e(this);
-            function a() {
-                t.toggleClass(s.bodyToggleClass);
-                var a = "." + s.subMenuClass;
-                e(a).each((function() {
-                    e(this).hasClass(s.subMenuToggleClass) && (e(this).removeClass(s.subMenuToggleClass),
-                    e(this).css("display", "none"),
-                    e(this).parent().removeClass(s.subMenuParentToggle))
-                }
-                ))
-            }
-            t.find("li").each((function() {
-                var t = e(this).find("ul");
-                t.addClass(s.subMenuClass),
-                t.css("display", "none"),
-                t.parent().addClass(s.subMenuParent),
-                t.prev("a").append(s.appendElement),
-                t.next("a").append(s.appendElement)
-            }
-            ));
-            var o = "." + s.meanExpandClass;
-            e(o).each((function() {
-                e(this).on("click", (function(t) {
-                    var a;
-                    t.preventDefault(),
-                    a = e(this).parent(),
-                    e(a).next("ul").length > 0 ? (e(a).parent().toggleClass(s.subMenuParentToggle),
-                    e(a).next("ul").slideToggle(s.toggleSpeed),
-                    e(a).next("ul").toggleClass(s.subMenuToggleClass)) : e(a).prev("ul").length > 0 && (e(a).parent().toggleClass(s.subMenuParentToggle),
-                    e(a).prev("ul").slideToggle(s.toggleSpeed),
-                    e(a).prev("ul").toggleClass(s.subMenuToggleClass))
-                }
-                ))
-            }
-            )),
-            e(s.menuToggleBtn).each((function() {
-                e(this).on("click", (function() {
-                    a()
-                }
-                ))
-            }
-            )),
-            t.on("click", (function(e) {
-                e.stopPropagation(),
-                a()
-            }
-            )),
-            t.find("div").on("click", (function(e) {
-                e.stopPropagation()
-            }
-            ))
-        }
-        ))
-    }
-    ,
-    e(".th-menu-wrapper").thmobilemenu(),
-    e(window).scroll((function() {
-        e(this).scrollTop() > 500 ? e(".sticky-wrapper").addClass("sticky") : e(".sticky-wrapper").removeClass("sticky")
-    }
-    )),
-   
-    e("[data-bg-src]").length > 0 && e("[data-bg-src]").each((function() {
-        var t = e(this).attr("data-bg-src");
-        e(this).css("background-image", "url(" + t + ")"),
-        e(this).removeAttr("data-bg-src").addClass("background-image")
-    }
-    )),
-    e("[data-mask-src]").length > 0 && e("[data-mask-src]").each((function() {
-        var t = e(this).attr("data-mask-src");
-        e(this).css({
-            "mask-image": "url(" + t + ")",
-            "-webkit-mask-image": "url(" + t + ")"
-        }),
-        e(this).removeAttr("data-mask-src")
-    }
-    )),
-   
-    e("[data-ani-duration]").each((function() {
-        var t = e(this).data("ani-duration");
-        e(this).css("animation-duration", t)
-    }
-    )),
-    e("[data-ani-delay]").each((function() {
-        var t = e(this).data("ani-delay");
-        e(this).css("animation-delay", t)
-    }
-    )),
-    e("[data-ani]").each((function() {
-        var t = e(this).data("ani");
-        e(this).addClass(t),
-        e(".slick-current [data-ani]").addClass("th-animated")
-    }
-    )),
-    e(".slick-slider").on("afterChange", (function(t, s, a, o) {
-        e(s.$slides).find("[data-ani]").removeClass("th-animated"),
-        e(s.$slides[a]).find("[data-ani]").addClass("th-animated")
-    }
-    )),
-    e(".brands_logo").each((function() {
-        var t = e(this);
-        function s(e) {
-            return t.data(e)
-        }
-        var a = '<button type="button" class="slick-prev"><i class="' + s("prev-arrow") + '"></i></button>'
-          , o = '<button type="button" class="slick-next"><i class="' + s("next-arrow") + '"></i></button>';
-        e("[data-slick-next]").each((function() {
-            e(this).on("click", (function(t) {
-                t.preventDefault(),
-                e(e(this).data("slick-next")).slick("slickNext")
-            }
-            ))
-        }
-        )),
-        e("[data-slick-prev]").each((function() {
-            e(this).on("click", (function(t) {
-                t.preventDefault(),
-                e(e(this).data("slick-prev")).slick("slickPrev")
-            }
-            ))
-        }
-        )), 1 == s("arrows") && (t.closest(".arrow-wrap").length || t.closest(".container").parent().addClass("arrow-wrap")),
-        t.slick({
-            dots: !!s("dots"),
-            fade: !!s("fade"),
-            arrows: !!s("arrows"),
-            speed: s("speed") ? s("speed") : 1e3,
-            asNavFor: !!s("asnavfor") && s("asnavfor"),
-            autoplay: 0 != s("autoplay"),
-            infinite: 0 != s("infinite"),
-            slidesToShow: s("slide-show") ? s("slide-show") : 1,
-            adaptiveHeight: !!s("adaptive-height"),
-            centerMode: !!s("center-mode"),
-            autoplaySpeed: s("autoplay-speed") ? s("autoplay-speed") : 8e3,
-            centerPadding: s("center-padding") ? s("center-padding") : "0",
-            focusOnSelect: 0 != s("focuson-select"),
-            pauseOnFocus: !!s("pauseon-focus"),
-            pauseOnHover: !!s("pauseon-hover"),
-            variableWidth: !!s("variable-width"),
-            vertical: !!s("vertical"),
-            verticalSwiping: !!s("vertical"),
-            prevArrow: s("prev-arrow") ? a : '<button type="button" class="slick-prev"><i class="fal fa-long-arrow-left"></i></button>',
-            nextArrow: s("next-arrow") ? o : '<button type="button" class="slick-next"><i class="fal fa-long-arrow-right"></i></button>',
-            rtl: "rtl" == e("html").attr("dir"),
-            responsive: [{
-                breakpoint: 1600,
-                settings: {
-                    arrows: !!s("xl-arrows"),
-                    dots: !!s("xl-dots"),
-                    slidesToShow: s("xl-slide-show") ? s("xl-slide-show") : s("slide-show"),
-                    centerMode: !!s("xl-center-mode"),
-                    centerPadding: 0
-                }
-            }, {
-                breakpoint: 1400,
-                settings: {
-                    arrows: !!s("ml-arrows"),
-                    dots: !!s("ml-dots"),
-                    slidesToShow: s("ml-slide-show") ? s("ml-slide-show") : s("slide-show"),
-                    centerMode: !!s("ml-center-mode"),
-                    centerPadding: 0
-                }
-            }, {
-                breakpoint: 1200,
-                settings: {
-                    arrows: !!s("lg-arrows"),
-                    dots: !!s("lg-dots"),
-                    slidesToShow: s("lg-slide-show") ? s("lg-slide-show") : s("slide-show"),
-                    centerMode: !!s("lg-center-mode") && s("lg-center-mode"),
-                    centerPadding: 0
-                }
-            }, {
-                breakpoint: 992,
-                settings: {
-                    arrows: !!s("md-arrows"),
-                    dots: !!s("md-dots"),
-                    slidesToShow: s("md-slide-show") ? s("md-slide-show") : 1,
-                    centerMode: !!s("md-center-mode") && s("md-center-mode"),
-                    centerPadding: 0
-                }
-            }, {
-                breakpoint: 768,
-                settings: {
-                    arrows: !!s("sm-arrows"),
-                    dots: !!s("sm-dots"),
-                    slidesToShow: s("sm-slide-show") ? s("sm-slide-show") : 1,
-                    centerMode: !!s("sm-center-mode") && s("sm-center-mode"),
-                    centerPadding: 0
-                }
-            }, {
-                breakpoint: 576,
-                settings: {
-                    arrows: !!s("xs-arrows"),
-                    dots: !!s("xs-dots"),
-                    slidesToShow: s("xs-slide-show") ? s("xs-slide-show") : 1,
-                    centerMode: !!s("xs-center-mode") && s("xs-center-mode"),
-                    centerPadding: 0
-                }
-            }]
-        })
-    }
-    )),e("#heroSlide2").each((function() {
-        e(this).slick({
-            slidesToShow: 1,
-            speed: 1e3,
-            autoplaySpeed: 2000,
-            arrows: !1,
-            fade: !0,
-            dots: !0,
-            appendDots: e(this).siblings(".slider-nav-wrap").find(".custom-dots")
-        })
-    }
-    ));
-    $(function () {
-        var section = document.querySelector('.counter-section');
-        var hasEntered = false;
-        if (! section)
-            return;
+    /*  START #page-header js rules */
 
-        var initAnimate = (window.scrollY + window.innerHeight) >= section.offsetTop;
-        if (initAnimate && !hasEntered) {
-            hasEntered = true;
-            counterActivate();
+    // Start open/close navbar search box
+    $(".header-search-box form").on("click", function (e) {
+        e.stopPropagation()
+    });
+
+    $('.header-search-btn').on("click", function () {
+        $(".header-search-box").addClass('show');
+
+        setTimeout(function () {
+            $(".search-input").focus()
+        }, 1000);
+    });
+
+    $('.header-search-box .close-search , .header-search-box').on("click", function () {
+        $(".header-search-box").removeClass('show');
+    });
+    // End open/close navbar search box
+
+
+    /* Start bootstrap Scrollspy Options  */
+    //on one page demos only
+//   if (navMain) {
+//       $(bdyOnePage).scrollspy({
+//           target: navMain,
+//           offset: navMainHeight + 1
+//       });
+//   }
+
+
+    if ($(this).scrollTop() > 50) {
+        if (!$(pageHeader).hasClass("is-sticky")) {
+            pageHeader.addClass("is-sticky");
+        }
+    }
+
+    main_window.on("scroll", function () {
+        if ($(this).scrollTop() > 50) {
+            if (!$(pageHeader).hasClass("is-sticky")) {
+                pageHeader.addClass("is-sticky");
+            }
+        } else {
+            if ($(pageHeader).hasClass("is-sticky")) {
+                pageHeader.removeClass("is-sticky");
+            }
+        }
+    });
+
+    // show/hide navbar links menu
+    $(".menu-toggler").on("click", function () {
+        pageHeader.find(".show:not(.bar-bottom .links) ").removeClass("show");
+        pageHeader.find(".bar-bottom .links").toggleClass("show");
+        $('.menu-toggler').toggleClass('close-menu')
+    });
+
+    // show/hide navbar info menu
+    $(".info-toggler, .close-icon").on("click", function () {
+        pageHeader.find(".show:not(.bar-top .info-panel)").removeClass("show");
+        pageHeader.find(".bar-top .info-panel").toggleClass("show");
+        if ($('.menu-toggler').hasClass('close-menu')) {
+            $('.menu-toggler').removeClass('close-menu')
         }
 
-        window.addEventListener('scroll', (e) => {
-            var shouldAnimate = (window.scrollY + window.innerHeight) >= section.offsetTop;
+    });
 
-            if (shouldAnimate && !hasEntered) {
-                hasEntered = true;
-                counterActivate();
+
+
+    $(".list-js").on("click", function (e) {
+        e.stopPropagation()
+    });
+
+    // close the currnt opend menu when click on its wrapper
+    $(".menu-wrapper").on("click", function () {
+        $(this).removeClass("show");
+        if ($('.menu-toggler').hasClass('close-menu')) {
+            $('.menu-toggler').removeClass('close-menu')
+        }
+    });
+
+    //showing navbar sub-menus on mobile
+    hasSubMenu.on("click", function (e) {
+        if (!(main_window.innerWidth() > 991)) {
+            $(this).children('.sub-menu').slideToggle();
+        }
+    });
+    $(".slider-fade").owlCarousel({
+        items: 1,
+        loop: !0,
+        dots: !0,
+        margin: 0,
+        rtl: true,
+        nav: !1,
+        navText: ["<span class='fas fa-arrow-left'></span>", "<span class='fas fa-arrow-right'></span>"],
+        autoplay: !0,
+        smartSpeed: 1500,
+        mouseDrag: !0,
+        animateIn: "fadeIn",
+        animateOut: "fadeOut",
+        responsive: {
+            992: {
+                nav: !0,
+                dots: !1
             }
+        }
+    });
+    $(".client-carousel").owlCarousel({
+        loop: !0,
+        responsiveClass: !0,
+        autoplay: !0,
+        autoplayTimeout: 5e3,
+        smartSpeed: 1500,
+        rtl: true,
+        nav: !1,
+        dots: !1,
+        center: !1,
+        margin: 30,
+        responsive: {
+            0: {
+                items: 1
+            },
+            481: {
+                items: 2
+            },
+            768: {
+                items: 3
+            },
+            992: {
+                items: 4
+            },
+            1200: {
+                items: 6
+            }
+        }
+    });
+    $(".owl-carousel").owlCarousel({
+        items: 1,
+        rtl: true,
+        loop: !0,
+        dots: !1,
+        margin: 0,
+        autoplay: !0,
+        smartSpeed: 500
+    }), $(".slider-fade").on("changed.owl.carousel", function (e) {
+        e = e.item.index - 2;
+        $("span").removeClass("animated fadeInUp"), $("h1").removeClass("animated fadeInUp"), $("p").removeClass("animated fadeInUp"), $("a").removeClass("animated fadeInUp"), $(".owl-item").not(".cloned").eq(e).find("span").addClass("animated fadeInUp"), $(".owl-item").not(".cloned").eq(e).find("h1").addClass("animated fadeInUp"), $(".owl-item").not(".cloned").eq(e).find("p").addClass("animated fadeInUp"), $(".owl-item").not(".cloned").eq(e).find("a").addClass("animated fadeInUp")
+    });
+
+    var pageSection = $(".parallax,.bg-img");
+    pageSection.each(function (e) {
+        $(this).attr("data-background") && $(this).css("background-image", "url(" + $(this).data("background") + ")")
+    });
+
+
+    if ($(".cursor-helper").length) {
+
+        var cursor = document.querySelector('.cursor-helper-outer');
+        var cursorinner = document.querySelector('.cursor-helper-inner');
+        var a = document.querySelectorAll('a');
+        var footer = document.querySelectorAll('footer');
+        var owlcarousel = document.querySelectorAll('.owl-carousel');
+
+        document.addEventListener('mousemove', function (e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
         });
-        function counterActivate() {
-            $('.counter-count .count').each(function () {
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 4000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now), 3);
-                    }
-                });
+
+        document.addEventListener('mousemove', function (e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            cursorinner.style.left = x + 'px';
+            cursorinner.style.top = y + 'px';
+        });
+
+        document.addEventListener('mousedown', function () {
+            cursor.classList.add('click');
+            cursorinner.classList.add('cursor-helper-innerhover')
+        });
+
+        document.addEventListener('mouseup', function () {
+            cursor.classList.remove('click')
+            cursorinner.classList.remove('cursor-helper-innerhover')
+        });
+
+        a.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                cursor.classList.add('cursor-link');
             });
-        }
-    }); // END OF DOCUMENT READY
-    $('[data-fancybox=""]').fancybox({
-        preventCaptionOverlap : false,
-        infobar: false,
-      
-        // Disable idle
-        idleTime : 0,
-      
-        // Display only these two buttons
-        buttons : [
-          'info', 'close'
-        ],
-      
-    
-      
-        onInit: function(instance) {
-      
-          // Toggle caption on tap
-          instance.$refs.container.on('touchstart', '[data-fancybox-info]', function(e) {
-            e.stopPropagation();
-            e.preventDefault();
-      
-            instance.$refs.container.toggleClass('fancybox-vertical-caption');
-          });
-      
-          // Display caption on button hover
-          instance.$refs.container.on('mouseenter', '[data-fancybox-info]', function(e) {
-            instance.$refs.container.addClass('fancybox-vertical-caption');
-      
-            // Hide caption when mouse leaves caption area
-            instance.$refs.caption.one('mouseleave', function(e) {
-              instance.$refs.container.removeClass('fancybox-vertical-caption');
+            item.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-link');
             });
-      
-          });
-      
-        }
-      
-      });
-      $(document).ready(function () {
+        });
+
+        footer.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                cursor.classList.add('cursor-light');
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-light');
+            });
+        });
+
+        owlcarousel.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                cursor.classList.add('cursor-slider');
+            });
+            item.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-slider');
+            });
+        });
+
+    }
+    $(document).ready(function () {
         $('.support').on('click',function () {
             $('.social-links-fixed').toggleClass('open');
-        }); 
+        });
     });
-}(jQuery);
+})(window.jQuery);
