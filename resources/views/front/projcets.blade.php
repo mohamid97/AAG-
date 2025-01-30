@@ -2,51 +2,61 @@
 
 @section('content')
 
-
-<div class="breadcumb-wrapper background-image"
-    style="background-image: url({{ asset('uploads/images/setting/' . $settings->our_work_breadcrumb_background) }});">
-    <h1 class="breadcumb-title">المشاريع</h1>
-    <ul class="breadcumb-menu">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li>المشاريع</li>
-    </ul>
-</div>
-
-<div class="space gallery_area">
-    <div class="container">
-    
-        <div class="row justify-content-lg-between align-items-end">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="title-area"><span class="big-title">م.</span>
-                    <h2 class="sec-title">المشاريع <span class="text-transparent">المميزة</span></h2>
-                </div>
-            </div>
-            
-        </div>
-        <div class="row project-slide2 th-carousel" data-slide-show="2">
-
-
-            @foreach ($projects as $index => $project )
-
-                <div class="col-md-4">
-                    <div class="project-box">
-                        <div class="project-img"><img src="{{ asset('/uploads/images/ourworks/' . $project->photo) }}" alt=" {{ $project->translate(app()->getLocale())->alt_image }}">
-                        </div>
-                        <div class="project-content">
-                            <div class="project-number">0{{ $index + 1  }}</div>
-                            <h3 class="h5 project-title"><a href="{{ asset('/uploads/images/ourworks/' . $project->photo) }}" data-fancybox="">  {{ $project->translate(app()->getLocale())->name }}</a></h3>
-                            <p class="project-map"><i class="fas fa-location-dot"></i> {{ $project->link }}  </p>
-                        </div>
-                    </div>
-                </div>
-                
-            @endforeach
-
-
-        </div>
-        <!-- <div class="text-center mt-5"><a href="project.html" class="link-btn">عرض جميع المشاريع</a></div> -->
+    <div class="breadcumb-wrapper background-image" style="background-image: url('{{ asset('uploads/images/setting/' . $settings->our_work_breadcrumb_background) }}');">
+        <h1 class="breadcumb-title">مشاريعنا السابقة</h1>
+        <ul class="breadcumb-menu">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li>مشاريعنا السابقة</li>
+        </ul>
     </div>
-</div>
+
+
+
+
+
+    <section class="overflow-visible pb-0 border-top">
+        <div class="container-fluid">
+            <div class="sec-title text-center wow fadeIn" data-wow-delay="200ms">
+                <span>مشاريعنا</span>
+                <h2 class="h1 mb-0 z-index-2 position-relative">أحدث مشاريعنا مذهلة</h2>
+            </div>
+            <div class="portfolio-style1 mb-5 row portfolio-gallery mt-n1-9 px-xl-17">
+
+
+
+                <div class="col-sm-6 col-lg-3 mt-1-9 wow fadeIn" data-wow-delay="150ms" data-fancybox="">
+                    @forelse($projects as $project)
+                        <div class="card card-style3 border-0 rounded-0">
+                            <a href="#"  data-fancybox="" data-src="assets/img/slider/4.jpeg">
+                                <img src="{{asset('uploads/images/ourworks/'.$project->photo)}}" alt="Project-Image-01">
+                            </a>
+                            <div class="card-body">O
+                                <div class="portfolio-icon">
+                                    <div class="top-icon">
+                                        <a href="project-details.html" class="portfolio-link">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-content">
+                                    <h3 class="h4"><a href="project-details.html" class="text-white">{{$project->name}}</a></h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    @empty
+                    @endforelse
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
 
 
 @endsection

@@ -27,6 +27,7 @@ class CMSController extends Controller
 
         // Filter by service name if provided
         if ($request->has('name') && $request->name !== null) {
+
             $query->whereHas('translations', function ($q) use ($request) {
                 $q->where('name', 'like', '%' . $request->name . '%');
             });

@@ -28,6 +28,11 @@ use GuzzleHttp\Exception\RequestException;
 
 
 Route::get('/', [HomeController::class , 'index'])->name('home');
+Route::get('/about-us', [HomeController::class , 'about'])->name('about');
+Route::get('/projects', [HomeController::class , 'projects'])->name('projects');
+Route::get('/articles', [HomeController::class , 'articles'])->name('articles');
+Route::get('/article/{slug}', [HomeController::class , 'article_details'])->name('article_details');
+
 
 //Route::get('/about' , [FrontendController::class , 'about'])->name('about');
 //Route::get('/contact-us' , [FrontendController::class , 'contact'])->name('contact');

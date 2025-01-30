@@ -32,9 +32,10 @@ class EditOurWorkRequest extends FormRequest
             'meta_des.*'=>'required|string',
             'meta_title.*'=>'required|string',
             'alt_image.*'=>'required|string',
-            'title_image'=>'required|string',
-
-
+            'title_image.*'=>'required|string',
         ];
+
+
+
     }
 }

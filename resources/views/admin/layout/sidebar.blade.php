@@ -14,16 +14,16 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto-navbav">
 
-        <div class="input-group-prepend">
-            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background-color: #17a2b8;color:#FFF">
-                {{ ( app()->getLocale() ) == 'en' ? 'English':'العربيه' }}
-            </button>
-            <ul class="dropdown-menu" style="left:30px !important">
+{{--        <div class="input-group-prepend">--}}
+{{--            <button type="button" class="btn  dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background-color: #17a2b8;color:#FFF">--}}
+{{--                {{ ( app()->getLocale() ) == 'en' ? 'English':'العربيه' }}--}}
+{{--            </button>--}}
+{{--            <ul class="dropdown-menu" style="left:30px !important">--}}
 
-                <li class="dropdown-item" {{ ( app()->getLocale() ) == 'en' ? 'selected':'' }}> <a href="{{ route('change_direction' , ['lang'=>'en']) }}" >English</a></li>
-                <li class="dropdown-item" {{ ( app()->getLocale() ) == 'ar' ? 'selected':'' }}><a href="{{ route('change_direction' , ['lang'=>'ar']) }}" >العربيه</a></li>
-            </ul>
-        </div>
+{{--                <li class="dropdown-item" {{ ( app()->getLocale() ) == 'en' ? 'selected':'' }}> <a href="{{ route('change_direction' , ['lang'=>'en']) }}" >English</a></li>--}}
+{{--                <li class="dropdown-item" {{ ( app()->getLocale() ) == 'ar' ? 'selected':'' }}><a href="{{ route('change_direction' , ['lang'=>'ar']) }}" >العربيه</a></li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
 
 
 
@@ -247,7 +247,7 @@
                         </li>
                     @endif
 
-                    
+
 
 
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\About;
 use App\Models\Admin\Achievement;
 use App\Models\Admin\Category;
+use App\Models\Admin\Cms;
 use App\Models\Admin\Contactus;
 use App\Models\Admin\Des;
 use App\Models\Admin\Meta;
@@ -47,4 +48,28 @@ class HomeController extends Controller
 
 
     }
+
+    public function about(){
+        $about = About::first();
+        return view('front.about' , compact('about'));
+    }
+
+    public function projects(){
+        $projects = Ourwork::all();
+        return view('front.projcets' , compact('projects'));
+    }
+
+    public function articles(){
+        $articles = Cms::orderBy('created_at', 'desc')->paginate(6); // Adjust the number as needed
+        return view('front.blog', compact('articles'));
+    }
+
+    public function article_details($slug){
+        $article = Cms::whereHas('translations', function ($q) use ($slug) {
+            $q->where('slug', 'like', '%' . $slug . '%');
+        })->first();
+        $articles = Cms::orderBy('created_at', 'desc')->take(5)->get();
+        return view('front.blog_details' , compact('article' , 'articles'));
+    }
+
 }

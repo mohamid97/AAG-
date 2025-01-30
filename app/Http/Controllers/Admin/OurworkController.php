@@ -33,6 +33,7 @@ class OurworkController extends Controller
         }
         $our_works= $query->paginate(5);
 
+
         return view('admin.ourworks.index' , ['our_works'=>$our_works , 'langs'=>$this->langs , 'searchTerm' =>$request->search ?? ''  ]);
 
     }
