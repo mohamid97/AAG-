@@ -4,6 +4,9 @@
     <title>A A G</title>
     <link href="{{ asset('front/assets/css/size.css') }}" rel="stylesheet" />
     <link href="{{ asset('front/assets/css/style.css') }}" rel="stylesheet" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-Ez+Km5A7UjzvR8xV5TY7ANFkbBvZgp1nm8UvgC1f6z5D5Jt9Hrf19J13UKlA1FfB" crossorigin="anonymous">
+
     @yield('styles')
 </head>
 <body>
@@ -11,23 +14,28 @@
     <div class="bar-bottom">
         <div class="container">
             <nav class="menu-navbar">
-                <div class="header-logo"><a class="logo-link" href="index.html"><img alt="logo" class="logo-img light-logo" src="assets/img/logo.jpg" /><img alt="logo" class="logo-img  dark-logo" src="assets/img/logo.jpg" /></a></div>
+
+                <div class="header-logo"><a class="logo-link" href="{{route('home')}}"><img alt="logo" class="logo-img light-logo" src="{{asset('uploads/images/setting/' . $settings->logo)}}" /><img alt="logo" class="logo-img  dark-logo" src="assets/img/logo.jpg" /></a></div>
 
                 <div class="links menu-wrapper ">
                     <ul class="list-js links-list">
                         <li class="menu-item"><a class="menu-link active" href="{{route('home')}}">الرئيسية </a></li>
                         <li class="menu-item"><a class="menu-link" href="{{route('about')}}">معلومات عنا </a></li>
-                        <li class="menu-item has-sub-menu"><a class="menu-link  " href="services.html">منتجاتنا </a><a class="drop-down-btn" href="#"> <i class="fas fa-chevron-down down-Arrow-icon"> </i> </a>
+                        <li class="menu-item has-sub-menu"><a class="menu-link  " href="{{route('products')}}">منتجاتنا </a><a class="drop-down-btn" href="#"> <i class="fas fa-chevron-down down-Arrow-icon"> </i> </a>
                             <ul class="sub-menu ">
-                                <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="services-details.html">لفف مكسي بالستيك</a></li>
-                                <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="services-details.html">لفف مجلفن </a></li>
+
+                                @forelse($products as $product)
+                                    <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="{{route('product_details' , ['slug'=>$product->slug])}}">{{$product->name}}  </a></li>
+                                @empty
+                                @endforelse
+
                             </ul>
                         </li>
                         <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="{{route('projects')}}">سابقة اعمال </a></li>
                         <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="{{route('articles')}}">المقالات </a></li>
-                        <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="contact.html">أتصل بنا </a></li>
+                        <li class="menu-item sub-menu-item"><a class="menu-link sub-menu-link  " href="{{route('contact_us')}}">أتصل بنا </a></li>
                         <li class="m-0 menu_info me-0 me-xl-3 mt-4 mt-xl-0">
-                            <div class="call_info"><span>للإستفسار</span> <a class="d-block p-0" href="tel:+201119779071">01119779071</a></div>
+                            <div class="call_info"><span>للإستفسار</span> <a class="d-block p-0" href="tel:{{$contact_us->phone1}}">{{$contact_us->phone1}}</a></div>
                         </li>
                     </ul>
                 </div>
@@ -43,4 +51,5 @@
     <!--End navbar--></header>
 <!--end Page Header--><!-- BANNER
         ================================================== -->
+@include('sweetalert::alert')
 

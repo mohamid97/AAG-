@@ -346,573 +346,573 @@
                         @endforeach
 
 
-                        <h3> Tabs </h3>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-8">
-                                   <lable  class="pointer" onclick="toggleCheckbox('customCheck1')">Show/Hide - Sliders</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->slider ?'checked':'')}} name="slider" type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('slider')
-                            <div class="text-danger">{{ $errors->first('slider') }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck2')">Show/Hide - About Us</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->about_us ?'checked':'')}} name="about_us" type="checkbox" class="custom-control-input" id="customCheck2">
-                                        <label class="custom-control-label" for="customCheck2"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('about_us')
-                            <div class="text-danger">{{ $errors->first('about_us') }}</div>
-                            @enderror
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck002')">Show/Hide - Mission Vission</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->mission_vission ?'checked':'')}} name="mission_vission" type="checkbox" class="custom-control-input" id="customCheck002">
-                                        <label class="custom-control-label" for="customCheck002"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('mission_vission')
-                            <div class="text-danger">{{ $errors->first('mission_vission') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck__00')">Show/Hide -  Shimpment </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->shimpment ?'checked':'')}} name="shimpment" type="checkbox" class="custom-control-input" id="customCheck__00">
-                                        <label class="custom-control-label" for="customCheck__00"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('shimpment')
-                            <div class="text-danger">{{ $errors->first('shimpment') }}</div>
-                            @enderror
-                        </div>
-
-                            <div class="form-group">
-
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__brand')">Show/Hide -  Brand </lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->brand ?'checked':'')}} name="brand" type="checkbox" class="custom-control-input" id="customCheck__brand">
-                                            <label class="custom-control-label" for="customCheck__brand"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('brand')
-                                <div class="text-danger">{{ $errors->first('brand') }}</div>
-                                @enderror
-                            </div>
-
-
-
-                            <div class="form-group">
-
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__weight')">Show/Hide -  Weight </lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->weight ?'checked':'')}} name="weight" type="checkbox" class="custom-control-input" id="customCheck__weight">
-                                            <label class="custom-control-label" for="customCheck__weight"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('weight')
-                                <div class="text-danger">{{ $errors->first('weight') }}</div>
-                                @enderror
-                            </div>
+{{--                        <h3> Tabs </h3>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                   <lable  class="pointer" onclick="toggleCheckbox('customCheck1')">Show/Hide - Sliders</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->slider ?'checked':'')}} name="slider" type="checkbox" class="custom-control-input" id="customCheck1">--}}
+{{--                                        <label class="custom-control-label" for="customCheck1"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('slider')--}}
+{{--                            <div class="text-danger">{{ $errors->first('slider') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck2')">Show/Hide - About Us</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->about_us ?'checked':'')}} name="about_us" type="checkbox" class="custom-control-input" id="customCheck2">--}}
+{{--                                        <label class="custom-control-label" for="customCheck2"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('about_us')--}}
+{{--                            <div class="text-danger">{{ $errors->first('about_us') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck002')">Show/Hide - Mission Vission</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->mission_vission ?'checked':'')}} name="mission_vission" type="checkbox" class="custom-control-input" id="customCheck002">--}}
+{{--                                        <label class="custom-control-label" for="customCheck002"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('mission_vission')--}}
+{{--                            <div class="text-danger">{{ $errors->first('mission_vission') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck__00')">Show/Hide -  Shimpment </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->shimpment ?'checked':'')}} name="shimpment" type="checkbox" class="custom-control-input" id="customCheck__00">--}}
+{{--                                        <label class="custom-control-label" for="customCheck__00"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('shimpment')--}}
+{{--                            <div class="text-danger">{{ $errors->first('shimpment') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+{{--                            <div class="form-group">--}}
+
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__brand')">Show/Hide -  Brand </lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->brand ?'checked':'')}} name="brand" type="checkbox" class="custom-control-input" id="customCheck__brand">--}}
+{{--                                            <label class="custom-control-label" for="customCheck__brand"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('brand')--}}
+{{--                                <div class="text-danger">{{ $errors->first('brand') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+
+
+
+{{--                            <div class="form-group">--}}
+
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__weight')">Show/Hide -  Weight </lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->weight ?'checked':'')}} name="weight" type="checkbox" class="custom-control-input" id="customCheck__weight">--}}
+{{--                                            <label class="custom-control-label" for="customCheck__weight"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('weight')--}}
+{{--                                <div class="text-danger">{{ $errors->first('weight') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
 
 
 
 
-                            <div class="form-group">
+{{--                            <div class="form-group">--}}
 
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__event')">Show/Hide -  Events </lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->event ?'checked':'')}} name="event" type="checkbox" class="custom-control-input" id="customCheck__event">
-                                            <label class="custom-control-label" for="customCheck__event"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('event')
-                                <div class="text-danger">{{ $errors->first('event') }}</div>
-                                @enderror
-                            </div>
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('customCheck__event')">Show/Hide -  Events </lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->event ?'checked':'')}} name="event" type="checkbox" class="custom-control-input" id="customCheck__event">--}}
+{{--                                            <label class="custom-control-label" for="customCheck__event"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('event')--}}
+{{--                                <div class="text-danger">{{ $errors->first('event') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
 
 
-                            
-                        <div class="form-group">
+{{--                            --}}
+{{--                        <div class="form-group">--}}
 
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck00')">Show/Hide -  Messages </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->messages ?'checked':'')}} name="messages" type="checkbox" class="custom-control-input" id="customCheck00">
-                                        <label class="custom-control-label" for="customCheck00"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('messages')
-                            <div class="text-danger">{{ $errors->first('messages') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-
-
-
-                            <!--- here -->
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('feedback5')">Show/Hide - Feedbacks </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->feedback ?'checked':'')}} name="feedback" type="checkbox" class="custom-control-input" id="feedback5">
-                                        <label class="custom-control-label" for="feedback5"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('feedback')
-                            <div class="text-danger">{{ $errors->first('feedback') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck010')">Show/Hide -  Payments </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->payments ?'checked':'')}} name="payments" type="checkbox" class="custom-control-input" id="customCheck010">
-                                        <label class="custom-control-label" for="customCheck010"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('messages')
-                            <div class="text-danger">{{ $errors->first('messages') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck3')">Show/Hide - Contact Us</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->contact_us ?'checked':'')}} name="contact_us" type="checkbox" class="custom-control-input" id="customCheck3">
-                                        <label class="custom-control-label" for="customCheck3"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('contact_us')
-                            <div class="text-danger">{{ $errors->first('contact_us') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck4')">Show/Hide - Social Media</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->social_media ?'checked':'')}} name="social_media" type="checkbox" class="custom-control-input" id="customCheck4">
-                                        <label class="custom-control-label" for="customCheck4"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('social_media')
-                            <div class="text-danger">{{ $errors->first('social_media') }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck5')">Show/Hide - Clients </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->clients ?'checked':'')}} name="clients" type="checkbox" class="custom-control-input" id="customCheck5">
-                                        <label class="custom-control-label" for="customCheck5"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('clients')
-                            <div class="text-danger">{{ $errors->first('clients') }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck6')">Show/Hide - Our works</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->our_works ?'checked':'')}} name="our_works" type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck6"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('our_works')
-                            <div class="text-danger">{{ $errors->first('our_works') }}</div>
-                            @enderror
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck7')">Show/Hide - Categories</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->categories ?'checked':'')}} name="categories" type="checkbox" class="custom-control-input" id="customCheck7">
-                                        <label class="custom-control-label" for="customCheck7"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('categories')
-                            <div class="text-danger">{{ $errors->first('categories') }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck8')">Show/Hide - Products </lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->products ?'checked':'')}} name="products" type="checkbox" class="custom-control-input" id="customCheck8">
-                                        <label class="custom-control-label" for="customCheck8"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('products')
-                            <div class="text-danger">{{ $errors->first('products') }}</div>
-                            @enderror
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('stock123')">Show/Hide - Stock</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->stock ?'checked':'')}} name="stock" type="checkbox" class="custom-control-input" id="stock123">
-                                        <label class="custom-control-label" for="stock123"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('stock')
-                            <div class="text-danger">{{ $errors->first('stock') }}</div>
-                            @enderror
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('card')">Show/Hide - Card</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->card ?'checked':'')}} name="card" type="checkbox" class="custom-control-input" id="card">
-                                        <label class="custom-control-label" for="card"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('card')
-                            <div class="text-danger">{{ $errors->first('card') }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('orders')">Show/Hide - Orders</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->orders ?'checked':'')}} name="orders" type="checkbox" class="custom-control-input" id="orders">
-                                        <label class="custom-control-label" for="orders"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('orders')
-                            <div class="text-danger">{{ $errors->first('orders') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-                       <div class="form-group">
-
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('tags')">Show/Hide - Tags</lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->tags ?'checked':'')}} name="tags" type="checkbox" class="custom-control-input" id="tags">
-                                            <label class="custom-control-label" for="tags"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('tags')
-                                <div class="text-danger">{{ $errors->first('tags') }}</div>
-                                @enderror
-                            </div>
-
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck9')">Show/Hide - Services</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->services ?'checked':'')}} name="services" type="checkbox" class="custom-control-input" id="customCheck9">
-                                        <label class="custom-control-label" for="customCheck9"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('services')
-                            <div class="text-danger">{{ $errors->first('services') }}</div>
-                            @enderror
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck10')">Show/Hide - Blog</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->cms ?'checked':'')}} name="cms" type="checkbox" class="custom-control-input" id="customCheck10">
-                                        <label class="custom-control-label" for="customCheck10"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('cms')
-                            <div class="text-danger">{{ $errors->first('cms') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck11')">Show/Hide - Media</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->media ?'checked':'')}} name="media" type="checkbox" class="custom-control-input" id="customCheck11">
-                                        <label class="custom-control-label" for="customCheck11"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('media')
-                            <div class="text-danger">{{ $errors->first('media') }}</div>
-                            @enderror
-                        </div>
-
-
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck44')">Show/Hide - Description</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->des ?'checked':'')}} name="des" type="checkbox" class="custom-control-input" id="customCheck44">
-                                        <label class="custom-control-label" for="customCheck44"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('des')
-                            <div class="text-danger">{{ $errors->first('des') }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('customCheck45')">Show/Hide - Achievement</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->achievement ?'checked':'')}} name="achievement" type="checkbox" class="custom-control-input" id="customCheck45">
-                                        <label class="custom-control-label" for="customCheck45"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('achievement')
-                            <div class="text-danger">{{ $errors->first('achievement') }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <lable class="pointer" onclick="toggleCheckbox('offers')">Show/Hide - Offers</lable>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="custom-control custom-checkbox">
-                                        <input {{($settings->offers ?'checked':'')}} name="offers" type="checkbox" class="custom-control-input" id="offers">
-                                        <label class="custom-control-label" for="offers"></label>
-                                    </div>
-                                </div>
-                            </div>
-                            @error('offers')
-                            <div class="text-danger">{{ $errors->first('offers') }}</div>
-                            @enderror
-                        </div>
-
-
-
-
-
-                            <div class="form-group">
-
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('customCheck0021points')">Show/Hide - Points</lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->points ?'checked':'')}} name="points" type="checkbox" class="custom-control-input" id="customCheck0021points">
-                                            <label class="custom-control-label" for="customCheck0021points"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('points')
-                                <div class="text-danger">{{ $errors->first('points') }}</div>
-                                @enderror
-                            </div>
-
-
-
-
-
-                            <div class="form-group">
-
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <lable class="pointer" onclick="toggleCheckbox('sales_tool')">Show/Hide - Sales Tool</lable>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="custom-control custom-checkbox">
-                                            <input {{($settings->sales_tool ?'checked':'')}} name="sales_tool" type="checkbox" class="custom-control-input" id="sales_tool">
-                                            <label class="custom-control-label" for="sales_tool"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                                @error('sales_tool')
-                                <div class="text-danger">{{ $errors->first('sales_tool') }}</div>
-                                @enderror
-                            </div>
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck00')">Show/Hide -  Messages </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->messages ?'checked':'')}} name="messages" type="checkbox" class="custom-control-input" id="customCheck00">--}}
+{{--                                        <label class="custom-control-label" for="customCheck00"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('messages')--}}
+{{--                            <div class="text-danger">{{ $errors->first('messages') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+
+
+
+{{--                            <!--- here -->--}}
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('feedback5')">Show/Hide - Feedbacks </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->feedback ?'checked':'')}} name="feedback" type="checkbox" class="custom-control-input" id="feedback5">--}}
+{{--                                        <label class="custom-control-label" for="feedback5"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('feedback')--}}
+{{--                            <div class="text-danger">{{ $errors->first('feedback') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck010')">Show/Hide -  Payments </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->payments ?'checked':'')}} name="payments" type="checkbox" class="custom-control-input" id="customCheck010">--}}
+{{--                                        <label class="custom-control-label" for="customCheck010"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('messages')--}}
+{{--                            <div class="text-danger">{{ $errors->first('messages') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck3')">Show/Hide - Contact Us</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->contact_us ?'checked':'')}} name="contact_us" type="checkbox" class="custom-control-input" id="customCheck3">--}}
+{{--                                        <label class="custom-control-label" for="customCheck3"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('contact_us')--}}
+{{--                            <div class="text-danger">{{ $errors->first('contact_us') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck4')">Show/Hide - Social Media</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->social_media ?'checked':'')}} name="social_media" type="checkbox" class="custom-control-input" id="customCheck4">--}}
+{{--                                        <label class="custom-control-label" for="customCheck4"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('social_media')--}}
+{{--                            <div class="text-danger">{{ $errors->first('social_media') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck5')">Show/Hide - Clients </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->clients ?'checked':'')}} name="clients" type="checkbox" class="custom-control-input" id="customCheck5">--}}
+{{--                                        <label class="custom-control-label" for="customCheck5"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('clients')--}}
+{{--                            <div class="text-danger">{{ $errors->first('clients') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck6')">Show/Hide - Our works</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->our_works ?'checked':'')}} name="our_works" type="checkbox" class="custom-control-input" id="customCheck6">--}}
+{{--                                        <label class="custom-control-label" for="customCheck6"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('our_works')--}}
+{{--                            <div class="text-danger">{{ $errors->first('our_works') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck7')">Show/Hide - Categories</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->categories ?'checked':'')}} name="categories" type="checkbox" class="custom-control-input" id="customCheck7">--}}
+{{--                                        <label class="custom-control-label" for="customCheck7"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('categories')--}}
+{{--                            <div class="text-danger">{{ $errors->first('categories') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck8')">Show/Hide - Products </lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->products ?'checked':'')}} name="products" type="checkbox" class="custom-control-input" id="customCheck8">--}}
+{{--                                        <label class="custom-control-label" for="customCheck8"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('products')--}}
+{{--                            <div class="text-danger">{{ $errors->first('products') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('stock123')">Show/Hide - Stock</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->stock ?'checked':'')}} name="stock" type="checkbox" class="custom-control-input" id="stock123">--}}
+{{--                                        <label class="custom-control-label" for="stock123"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('stock')--}}
+{{--                            <div class="text-danger">{{ $errors->first('stock') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('card')">Show/Hide - Card</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->card ?'checked':'')}} name="card" type="checkbox" class="custom-control-input" id="card">--}}
+{{--                                        <label class="custom-control-label" for="card"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('card')--}}
+{{--                            <div class="text-danger">{{ $errors->first('card') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('orders')">Show/Hide - Orders</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->orders ?'checked':'')}} name="orders" type="checkbox" class="custom-control-input" id="orders">--}}
+{{--                                        <label class="custom-control-label" for="orders"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('orders')--}}
+{{--                            <div class="text-danger">{{ $errors->first('orders') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+{{--                       <div class="form-group">--}}
+
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('tags')">Show/Hide - Tags</lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->tags ?'checked':'')}} name="tags" type="checkbox" class="custom-control-input" id="tags">--}}
+{{--                                            <label class="custom-control-label" for="tags"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('tags')--}}
+{{--                                <div class="text-danger">{{ $errors->first('tags') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck9')">Show/Hide - Services</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->services ?'checked':'')}} name="services" type="checkbox" class="custom-control-input" id="customCheck9">--}}
+{{--                                        <label class="custom-control-label" for="customCheck9"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('services')--}}
+{{--                            <div class="text-danger">{{ $errors->first('services') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck10')">Show/Hide - Blog</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->cms ?'checked':'')}} name="cms" type="checkbox" class="custom-control-input" id="customCheck10">--}}
+{{--                                        <label class="custom-control-label" for="customCheck10"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('cms')--}}
+{{--                            <div class="text-danger">{{ $errors->first('cms') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck11')">Show/Hide - Media</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->media ?'checked':'')}} name="media" type="checkbox" class="custom-control-input" id="customCheck11">--}}
+{{--                                        <label class="custom-control-label" for="customCheck11"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('media')--}}
+{{--                            <div class="text-danger">{{ $errors->first('media') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck44')">Show/Hide - Description</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->des ?'checked':'')}} name="des" type="checkbox" class="custom-control-input" id="customCheck44">--}}
+{{--                                        <label class="custom-control-label" for="customCheck44"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('des')--}}
+{{--                            <div class="text-danger">{{ $errors->first('des') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('customCheck45')">Show/Hide - Achievement</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->achievement ?'checked':'')}} name="achievement" type="checkbox" class="custom-control-input" id="customCheck45">--}}
+{{--                                        <label class="custom-control-label" for="customCheck45"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('achievement')--}}
+{{--                            <div class="text-danger">{{ $errors->first('achievement') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+{{--                        <div class="form-group">--}}
+
+{{--                            <div class="row">--}}
+{{--                                <div class="col-md-8">--}}
+{{--                                    <lable class="pointer" onclick="toggleCheckbox('offers')">Show/Hide - Offers</lable>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-md-4">--}}
+{{--                                    <div class="custom-control custom-checkbox">--}}
+{{--                                        <input {{($settings->offers ?'checked':'')}} name="offers" type="checkbox" class="custom-control-input" id="offers">--}}
+{{--                                        <label class="custom-control-label" for="offers"></label>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                            @error('offers')--}}
+{{--                            <div class="text-danger">{{ $errors->first('offers') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+
+
+
+
+{{--                            <div class="form-group">--}}
+
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('customCheck0021points')">Show/Hide - Points</lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->points ?'checked':'')}} name="points" type="checkbox" class="custom-control-input" id="customCheck0021points">--}}
+{{--                                            <label class="custom-control-label" for="customCheck0021points"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('points')--}}
+{{--                                <div class="text-danger">{{ $errors->first('points') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
+
+
+
+
+
+{{--                            <div class="form-group">--}}
+
+{{--                                <div class="row">--}}
+{{--                                    <div class="col-md-8">--}}
+{{--                                        <lable class="pointer" onclick="toggleCheckbox('sales_tool')">Show/Hide - Sales Tool</lable>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-4">--}}
+{{--                                        <div class="custom-control custom-checkbox">--}}
+{{--                                            <input {{($settings->sales_tool ?'checked':'')}} name="sales_tool" type="checkbox" class="custom-control-input" id="sales_tool">--}}
+{{--                                            <label class="custom-control-label" for="sales_tool"></label>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                @error('sales_tool')--}}
+{{--                                <div class="text-danger">{{ $errors->first('sales_tool') }}</div>--}}
+{{--                                @enderror--}}
+{{--                            </div>--}}
 
 
 

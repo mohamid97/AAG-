@@ -5,7 +5,7 @@
                 <h3 class="title">متخصصون في تصميم وتنفيذ جميع اعمال الزجاج بأفضل الخامات وأحسن الأسعار</h3>
             </div>
 
-            <div class="btn-box"><a class="theme-btn btn-style-three" href="services.html"><span class="btn-title">خدمات اكثر</span></a></div>
+            <div class="btn-box"><a class="theme-btn btn-style-three" href="{{route('products')}}l"><span class="btn-title">خدمات اكثر</span></a></div>
         </div>
     </div>
 </section>
@@ -19,7 +19,7 @@
             <div class="row"><!--Footer Column-->
                 <div class="footer-column col-xl-3 col-sm-6">
                     <div class="footer-widget about-widget">
-                        <div class="logo"><a href="index.html"><img alt="" src="./assets/img/logo.jpg" /></a></div>
+                        <div class="logo"><a href="index.html"><img alt="" src="{{asset('uploads/images/setting/' . $settings->logo)}}" /></a></div>
                     </div>
                 </div>
                 <!--Footer Column-->
@@ -29,11 +29,10 @@
                         <h3 class="widget-title">خدمات</h3>
 
                         <ul class="user-links">
-                            <li><a href="#">Reliability &amp; Punctuality</a></li>
-                            <li><a href="#">Trusted Franchise</a></li>
-                            <li><a href="#">Warehoues Storage</a></li>
-                            <li><a href="#">Real Time Tracking</a></li>
-                            <li><a href="#">Transparent Pricing</a></li>
+                            @forelse($products as $product)
+                            <li><a href="{{route('product_details' , ['slug'=>$product->slug])}}">{{$product->name}}</a></li>
+                            @empty
+                            @endforelse
                         </ul>
                     </div>
                 </div>
@@ -41,16 +40,12 @@
 
                 <div class="footer-column col-xl-3 col-sm-6">
                     <div class="footer-widget gallery-widget">
-                        <h3 class="widget-title">المشاريع</h3>
+                        <h3 class="widget-title">روابط</h3>
 
-                        <ul class="user-links two-column">
-                            <li><a href="#">من نحن</a></li>
-                            <li><a href="#">مشاريع جديدة</a></li>
-                            <li><a href="#">تاريخنا</a></li>
-                            <li><a href="#">اتصال</a></li>
-                            <li><a href="#">مشاركة مدونة</a></li>
-                            <li><a href="#">سياسة الخصوصية</a></li>
-                            <li><a href="#">شروط الاستخدام</a></li>
+                        <ul class="user-links">
+                            <li><a href="{{route('about')}}">من نحن</a></li>
+                            <li><a href="{{route('contact_us')}}">اتصل بنا </a></li>
+                            <li><a href="{{route('articles')}}">المقالات </a></li>
                         </ul>
                     </div>
                 </div>
@@ -83,7 +78,7 @@
         <div class="container">
             <div class="inner-container">
                 <div class="copyright-text">
-                    <p>&copy; حقوق الطبع والنشر 2024 بواسطة <a href="index.html">AAG</a></p>
+                    <p>&copy; حقوق الطبع والنشر {{ date('Y') }} بواسطة <a href="{{route('home')}}">AAG</a></p>
                 </div>
 
                 <ul class="social-icon-two">
@@ -98,13 +93,20 @@
 </footer>
 <!--End Main Footer -->
 
+{{--<li class="facebook"><a href="{{$social->facebook}}"><i class="fa-brands fa-facebook"></i></a></li>--}}
+{{--<li class="pinterest"><a href="{{$social->instagram}}"><i class="fa-brands fa-instagram"></i></a></li>--}}
+{{--<li class="whatsapp"><a href="{{$social->whatsapp}}"><i class="fa-brands fa-whatsapp"></i></a></li>--}}
+{{--<li class="twitter"><a href="{{$social->twitter}}"><i class="fa-brands fa-x-twitter"></i></a> </li>--}}
 <div class="social-links-fixed">
     <ul class="clearfix">
-        <li class="facebook"></li>
-        <li class="pinterest"></li>
-        <li class="whatsapp"></li>
-        <li class="support"></li>
-        <li class="twitter"></li>
+        <li class="facebook"><a href="{{$social->facebook}}" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+        <li class="pinterest"><a href="{{$social->instagram}}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+        <li class="whatsapp"><a href="{{$social->whatsapp}}" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+        <li class="support"><i class="fa-solid fa-bars"></i>
+        </li>
+        <li class="twitter"><a href="{{$social->twitter}}" target="_blank"><i class="fa-brands fa-twitter"></i></a> </li>
+
+
     </ul>
 </div>
 

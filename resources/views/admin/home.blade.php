@@ -11,12 +11,14 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Can Grow</li>
+                        <li class="breadcrumb-item active">AAG</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
+
+
 
 
     <!-- Main content -->
@@ -140,217 +142,217 @@
                 <!-- ./col -->
             </div>
 
-            <div class="row">
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{ __('main.carts') }}</span>
-                            <span class="info-box-number">{{ $cards }}</span>
-                        </div>
-                    </div>
-                </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-12 col-sm-6 col-md-3">--}}
+{{--                    <div class="info-box mb-3">--}}
+{{--                        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>--}}
+{{--                        <div class="info-box-content">--}}
+{{--                            <span class="info-box-text">{{ __('main.carts') }}</span>--}}
+{{--                            <span class="info-box-number">{{ $cards }}</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-truck"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{ __('main.orders') }}</span>
-                            <span class="info-box-number">{{ $orders }}</span>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-12 col-sm-6 col-md-3">--}}
+{{--                    <div class="info-box mb-3">--}}
+{{--                        <span class="info-box-icon bg-danger elevation-1"><i class="fa fa-truck"></i></span>--}}
+{{--                        <div class="info-box-content">--}}
+{{--                            <span class="info-box-text">{{ __('main.orders') }}</span>--}}
+{{--                            <span class="info-box-number">{{ $orders }}</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="clearfix hidden-md-up"></div>
+{{--                <div class="clearfix hidden-md-up"></div>--}}
 
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-percent"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{ __('main.offers') }}</span>
-                            <span class="info-box-number">{{ $offers }}</span>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="col-12 col-sm-6 col-md-3">--}}
+{{--                    <div class="info-box mb-3">--}}
+{{--                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-percent"></i></span>--}}
+{{--                        <div class="info-box-content">--}}
+{{--                            <span class="info-box-text">{{ __('main.offers') }}</span>--}}
+{{--                            <span class="info-box-number">{{ $offers }}</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="col-12 col-sm-6 col-md-3">
-                    <div class="info-box mb-3">
-                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-cart"></i></span>
-                        <div class="info-box-content">
-                            <span class="info-box-text">{{ __('main.points') }}</span>
-                            <span class="info-box-number">{{ $totalPoints }}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
+{{--                <div class="col-12 col-sm-6 col-md-3">--}}
+{{--                    <div class="info-box mb-3">--}}
+{{--                        <span class="info-box-icon bg-info elevation-1"><i class="fas fa-shopping-cart"></i></span>--}}
+{{--                        <div class="info-box-content">--}}
+{{--                            <span class="info-box-text">{{ __('main.points') }}</span>--}}
+{{--                            <span class="info-box-number">{{ $totalPoints }}</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
 
 
-            <div class="row">
-                <div class="card col-md-12">
-                    <div class="card-header border-transparent">
-                        <h3 class="card-title"> {{ __('main.latest_orders') }}</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table m-0">
-                                <thead>
-                                <tr>
-                                    <th> ID</th>
-                                    <th>{{ __('main.name') }}</th>
-                                    <th>{{ __('main.status') }}</th>
-                                    <th>{{ __('main.total_price') }}</th>
-                                    <th>{{ __('main.shiping_price') }}</th>
-                                    <th>{{ __('main.shiping_price') }}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @forelse($latest_orders as $order)
-                                    <tr>
-                                        <td>
-                                            <a href="{{ route('admin.orders.show_details', $order->id) }}">{{ $order->id }}</a>
-                                        </td>
-                                        <td>{{ $order->user->name ?? 'Guest' }}</td>
-                                        <td>
-                                    <span
-                                        class="badge badge-{{ $order->status == 'pending' ? 'warning' : ($order->status == 'finished' ? 'success' : 'info') }}"
-                                        title="{{ ucfirst($order->status) }} Order"
-                                    >
-                                        {{ ucfirst($order->status) }}
-                                    </span>
-                                        </td>
-                                        <td>${{ number_format($order->total_price, 2) }}</td>
-                                        <td>${{ number_format($order->shipment_price, 2) }}</td>
-                                        <td>{{ $order->created_at->format('Y-m-d') }}</td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="6" class="text-center">No latest orders available.</td>
-                                    </tr>
-                                @endforelse
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer clearfix">
-                        <a href="{{ route('admin.orders.index') }}" class="btn btn-sm btn-secondary float-right">{{ __('main.all_orders') }}</a>
-                    </div>
-                </div>
-            </div>
 
 
-            <div class="row">
-            <div class="card col-md-12">
-                <div class="card-header border-transparent">
-                    <h3 class="card-title">  {{ __('main.latest_cards') }}</h3>
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
+{{--            <div class="row">--}}
+{{--                <div class="card col-md-12">--}}
+{{--                    <div class="card-header border-transparent">--}}
+{{--                        <h3 class="card-title"> {{ __('main.latest_orders') }}</h3>--}}
+{{--                        <div class="card-tools">--}}
+{{--                            <button type="button" class="btn btn-tool" data-card-widget="collapse">--}}
+{{--                                <i class="fas fa-minus"></i>--}}
+{{--                            </button>--}}
+{{--                            <button type="button" class="btn btn-tool" data-card-widget="remove">--}}
+{{--                                <i class="fas fa-times"></i>--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body p-0">--}}
+{{--                        <div class="table-responsive">--}}
+{{--                            <table class="table m-0">--}}
+{{--                                <thead>--}}
+{{--                                <tr>--}}
+{{--                                    <th> ID</th>--}}
+{{--                                    <th>{{ __('main.name') }}</th>--}}
+{{--                                    <th>{{ __('main.status') }}</th>--}}
+{{--                                    <th>{{ __('main.total_price') }}</th>--}}
+{{--                                    <th>{{ __('main.shiping_price') }}</th>--}}
+{{--                                    <th>{{ __('main.shiping_price') }}</th>--}}
+{{--                                </tr>--}}
+{{--                                </thead>--}}
+{{--                                <tbody>--}}
+{{--                                @forelse($latest_orders as $order)--}}
+{{--                                    <tr>--}}
+{{--                                        <td>--}}
+{{--                                            <a href="{{ route('admin.orders.show_details', $order->id) }}">{{ $order->id }}</a>--}}
+{{--                                        </td>--}}
+{{--                                        <td>{{ $order->user->name ?? 'Guest' }}</td>--}}
+{{--                                        <td>--}}
+{{--                                    <span--}}
+{{--                                        class="badge badge-{{ $order->status == 'pending' ? 'warning' : ($order->status == 'finished' ? 'success' : 'info') }}"--}}
+{{--                                        title="{{ ucfirst($order->status) }} Order"--}}
+{{--                                    >--}}
+{{--                                        {{ ucfirst($order->status) }}--}}
+{{--                                    </span>--}}
+{{--                                        </td>--}}
+{{--                                        <td>${{ number_format($order->total_price, 2) }}</td>--}}
+{{--                                        <td>${{ number_format($order->shipment_price, 2) }}</td>--}}
+{{--                                        <td>{{ $order->created_at->format('Y-m-d') }}</td>--}}
+{{--                                    </tr>--}}
+{{--                                @empty--}}
+{{--                                    <tr>--}}
+{{--                                        <td colspan="6" class="text-center">No latest orders available.</td>--}}
+{{--                                    </tr>--}}
+{{--                                @endforelse--}}
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-footer clearfix">--}}
+{{--                        <a href="{{ route('admin.orders.index') }}" class="btn btn-sm btn-secondary float-right">{{ __('main.all_orders') }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table m-0">
-                            <thead>
-                            <tr>
-                                <th> ID</th>
-                                <th> {{ __('main.name') }}</th>
-                                <th> {{ __('main.items') }}</th>
-                                <th>{{ __('main.total_price') }}</th>
-                                <th>{{ __('main.date') }}</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($latest_cards as $card)
-                                <tr>
-                                    <td>{{ $card->id }}</td>
-                                    <td>{{ $card->user->first_name ?? 'N/A' }}</td>
-                                    <td>
-                                        @foreach($card->items as $item)
-                                            <div>
-                                                <strong>{{ $item->product->name }}</strong> (x{{ $item->quantity }})
-                                            </div>
-                                        @endforeach
-                                    </td>
-                                    <td>${{ number_format($card->total_price, 2) }}</td>
 
-                                    <td>{{ $card->created_at->format('d M Y, H:i') }}</td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+{{--            <div class="row">--}}
+{{--            <div class="card col-md-12">--}}
+{{--                <div class="card-header border-transparent">--}}
+{{--                    <h3 class="card-title">  {{ __('main.latest_cards') }}</h3>--}}
+{{--                    <div class="card-tools">--}}
+{{--                        <button type="button" class="btn btn-tool" data-card-widget="collapse">--}}
+{{--                            <i class="fas fa-minus"></i>--}}
+{{--                        </button>--}}
+{{--                        <button type="button" class="btn btn-tool" data-card-widget="remove">--}}
+{{--                            <i class="fas fa-times"></i>--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="card-footer clearfix">
-                    <a href="{{ route('admin.cards.index') }}" class="btn btn-sm btn-secondary float-right"> {{ __('main.all_carts') }}  </a>
+{{--                <div class="card-body p-0">--}}
+{{--                    <div class="table-responsive">--}}
+{{--                        <table class="table m-0">--}}
+{{--                            <thead>--}}
+{{--                            <tr>--}}
+{{--                                <th> ID</th>--}}
+{{--                                <th> {{ __('main.name') }}</th>--}}
+{{--                                <th> {{ __('main.items') }}</th>--}}
+{{--                                <th>{{ __('main.total_price') }}</th>--}}
+{{--                                <th>{{ __('main.date') }}</th>--}}
+{{--                            </tr>--}}
+{{--                            </thead>--}}
+{{--                            <tbody>--}}
+{{--                            @foreach($latest_cards as $card)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{ $card->id }}</td>--}}
+{{--                                    <td>{{ $card->user->first_name ?? 'N/A' }}</td>--}}
+{{--                                    <td>--}}
+{{--                                        @foreach($card->items as $item)--}}
+{{--                                            <div>--}}
+{{--                                                <strong>{{ $item->product->name }}</strong> (x{{ $item->quantity }})--}}
+{{--                                            </div>--}}
+{{--                                        @endforeach--}}
+{{--                                    </td>--}}
+{{--                                    <td>${{ number_format($card->total_price, 2) }}</td>--}}
 
-                </div>
-            </div>
-        </div>
-            <div class="row">
-                <div class="card col-md-12">
-                    <div class="card-header border-transparent">
-                        <h3 class="card-title"> {{ __('main.lowest_product') }} </h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
+{{--                                    <td>{{ $card->created_at->format('d M Y, H:i') }}</td>--}}
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table m-0">
-                                <thead>
-                                    <tr>
-                                        <th> ID</th>
-                                        <th>{{ __('main.name') }} </th>
-                                        <th>{{ __('main.stock') }} </th>
-                                        <th>{{ __('main.date') }} </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($lowest_stock as $pro)
-                                    <tr>
-                                        <td><a href="{{ route('admin.products.edit', $pro->id) }}">{{ $pro->id }} </a></td>
-                                        <td>{{ $pro->name ?? 'N/A' }}</td>
+{{--                <div class="card-footer clearfix">--}}
+{{--                    <a href="{{ route('admin.cards.index') }}" class="btn btn-sm btn-secondary float-right"> {{ __('main.all_carts') }}  </a>--}}
 
-                                        <td>{{ $pro->stock }}</td>
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--            <div class="row">--}}
+{{--                <div class="card col-md-12">--}}
+{{--                    <div class="card-header border-transparent">--}}
+{{--                        <h3 class="card-title"> {{ __('main.lowest_product') }} </h3>--}}
+{{--                        <div class="card-tools">--}}
+{{--                            <button type="button" class="btn btn-tool" data-card-widget="collapse">--}}
+{{--                                <i class="fas fa-minus"></i>--}}
+{{--                            </button>--}}
+{{--                            <button type="button" class="btn btn-tool" data-card-widget="remove">--}}
+{{--                                <i class="fas fa-times"></i>--}}
+{{--                            </button>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                                        <td>{{ $pro->created_at->format('d M Y, H:i') }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+{{--                    <div class="card-body p-0">--}}
+{{--                        <div class="table-responsive">--}}
+{{--                            <table class="table m-0">--}}
+{{--                                <thead>--}}
+{{--                                    <tr>--}}
+{{--                                        <th> ID</th>--}}
+{{--                                        <th>{{ __('main.name') }} </th>--}}
+{{--                                        <th>{{ __('main.stock') }} </th>--}}
+{{--                                        <th>{{ __('main.date') }} </th>--}}
+{{--                                    </tr>--}}
+{{--                                </thead>--}}
+{{--                                <tbody>--}}
+{{--                                    @foreach($lowest_stock as $pro)--}}
+{{--                                    <tr>--}}
+{{--                                        <td><a href="{{ route('admin.products.edit', $pro->id) }}">{{ $pro->id }} </a></td>--}}
+{{--                                        <td>{{ $pro->name ?? 'N/A' }}</td>--}}
 
-                    <div class="card-footer clearfix">
-                        <a href="{{ route('admin.products.index') }}" class="btn btn-sm btn-secondary float-right">{{ __('main.all_products') }} </a>
+{{--                                        <td>{{ $pro->stock }}</td>--}}
 
-                    </div>
-                </div>
-            </div>
+{{--                                        <td>{{ $pro->created_at->format('d M Y, H:i') }}</td>--}}
+{{--                                    </tr>--}}
+{{--                                    @endforeach--}}
+{{--                                </tbody>--}}
+{{--                            </table>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="card-footer clearfix">--}}
+{{--                        <a href="{{ route('admin.products.index') }}" class="btn btn-sm btn-secondary float-right">{{ __('main.all_products') }} </a>--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
 
 
@@ -359,34 +361,34 @@
 
 
                 <!-- Order Status Chart -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <canvas id="orderChart"></canvas>
-                    </div>
+{{--                <div class="row">--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <canvas id="orderChart"></canvas>--}}
+{{--                    </div>--}}
 
-                    <div class="col-md-6">
-                        <canvas id="categoryProductChart"></canvas>
-                    </div>
-                </div>
+{{--                    <div class="col-md-6">--}}
+{{--                        <canvas id="categoryProductChart"></canvas>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <br><br>
-                <hr>
-                <!-- Product Stock Chart -->
-                <div class="row"  style="    margin: 50px 0 80px 0;padding: 0 0 50px;">
+{{--                <br><br>--}}
+{{--                <hr>--}}
+{{--                <!-- Product Stock Chart -->--}}
+{{--                <div class="row"  style="    margin: 50px 0 80px 0;padding: 0 0 50px;">--}}
 
-                    <div class="col-md-6">
-                        <canvas id="orderUserStatusChart"></canvas>
-                    </div>
-                    <div class="col-md-6">
-                        <canvas id="salesLineChart"></canvas>
-                    </div>
+{{--                    <div class="col-md-6">--}}
+{{--                        <canvas id="orderUserStatusChart"></canvas>--}}
+{{--                    </div>--}}
+{{--                    <div class="col-md-6">--}}
+{{--                        <canvas id="salesLineChart"></canvas>--}}
+{{--                    </div>--}}
 
-                </div>
-<hr>
-<br>
-                <div class="col-md-12">
-                    <canvas id="productStockChart"></canvas>
-                </div>
+{{--                </div>--}}
+{{--<hr>--}}
+{{--<br>--}}
+{{--                <div class="col-md-12">--}}
+{{--                    <canvas id="productStockChart"></canvas>--}}
+{{--                </div>--}}
 
 
 

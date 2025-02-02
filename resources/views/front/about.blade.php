@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row align-items-xxl-center">
                 <div class="col-lg-6">
-                    <div class="about-image position-relative mb-md-3 mb-lg-0"><img alt="{{$about->alt_image}}" title="{{$about->title_image}}" src="{{asset('uploads/images/about/' . $about->photo)}}" />
+                    <div class="about-image position-relative mb-md-3 mb-lg-0"><img alt="{{isset($about->alt_image) ? $about->alt_image : ''}}" title="{{isset($about->title_image) ? $about->title_image : ''}}" src="{{asset('uploads/images/about/' . $about->photo)}}" />
                         <div class="about-shape3"></div>
 
                         <div class="about-shape4"></div>

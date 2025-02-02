@@ -32,6 +32,14 @@ Route::get('/about-us', [HomeController::class , 'about'])->name('about');
 Route::get('/projects', [HomeController::class , 'projects'])->name('projects');
 Route::get('/articles', [HomeController::class , 'articles'])->name('articles');
 Route::get('/article/{slug}', [HomeController::class , 'article_details'])->name('article_details');
+Route::get('/contact-us', [HomeController::class , 'contact_us'])->name('contact_us');
+Route::post('/store/message' , [HomeController::class , 'save_message'])->name('send_message');
+
+
+
+Route::get('/services' , [HomeController::class , 'products'])->name('products');
+Route::get('/service/{slug}' , [HomeController::class , 'product_details'])->name('product_details');
+
 
 
 //Route::get('/about' , [FrontendController::class , 'about'])->name('about');

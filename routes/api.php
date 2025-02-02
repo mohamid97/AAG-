@@ -124,10 +124,7 @@ Route::middleware('checkLang')->group(function (){
 
 
     Route::prefix('achivement')->group(function(){
-
         Route::post('/get' , [AchivementController::class , 'get']);
-
-
     });
 
    Route::prefix('featured')->group(function(){

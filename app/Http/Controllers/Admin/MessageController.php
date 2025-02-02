@@ -8,7 +8,8 @@ use App\Mail\ContactFormSubmitted;
 use App\Models\Admin\Message;
 use App\Trait\ResponseTrait;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class MessageController extends Controller

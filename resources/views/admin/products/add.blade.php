@@ -54,45 +54,45 @@
                         </div>
                         <br>
 
-                        <div class="form-group">
-                            <label for="price">{{ __('main.price') }}</label> <!-- Translated Label -->
-                            <input type="text" name="price" class="form-control" id="price" placeholder="{{ __('main.enter_price') }}" value="{{ old('price') }}">
-                            @error('price')
-                            <div class="text-danger">{{ $errors->first('price') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="price">{{ __('main.price') }}</label> <!-- Translated Label -->--}}
+{{--                            <input type="text" name="price" class="form-control" id="price" placeholder="{{ __('main.enter_price') }}" value="{{ old('price') }}">--}}
+{{--                            @error('price')--}}
+{{--                            <div class="text-danger">{{ $errors->first('price') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="old_price">{{ __('main.old_price') }}</label> <!-- Translated Label -->
-                            <input type="text" name="old_price" class="form-control" id="old_price" placeholder="{{ __('main.enter_old_price') }}" value="{{ old('old_price') }}">
-                            @error('old_price')
-                            <div class="text-danger">{{ $errors->first('old_price') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="old_price">{{ __('main.old_price') }}</label> <!-- Translated Label -->--}}
+{{--                            <input type="text" name="old_price" class="form-control" id="old_price" placeholder="{{ __('main.enter_old_price') }}" value="{{ old('old_price') }}">--}}
+{{--                            @error('old_price')--}}
+{{--                            <div class="text-danger">{{ $errors->first('old_price') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="discount">{{ __('main.discount') }}</label> <!-- Translated Label -->
-                            <input type="text" name="discount" class="form-control" id="discount" placeholder="{{ __('main.enter_discount') }}" value="{{ old('discount') }}">
-                            @error('discount')
-                            <div class="text-danger">{{ $errors->first('discount') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="discount">{{ __('main.discount') }}</label> <!-- Translated Label -->--}}
+{{--                            <input type="text" name="discount" class="form-control" id="discount" placeholder="{{ __('main.enter_discount') }}" value="{{ old('discount') }}">--}}
+{{--                            @error('discount')--}}
+{{--                            <div class="text-danger">{{ $errors->first('discount') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="sku">{{ __('main.sku') }}</label> <!-- Translated Label -->
-                            <input type="text" name="sku" class="form-control" id="sku" placeholder="{{ __('main.enter_sku') }}" value="{{ old('sku') }}">
-                            @error('sku')
-                            <div class="text-danger">{{ $errors->first('sku') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="sku">{{ __('main.sku') }}</label> <!-- Translated Label -->--}}
+{{--                            <input type="text" name="sku" class="form-control" id="sku" placeholder="{{ __('main.enter_sku') }}" value="{{ old('sku') }}">--}}
+{{--                            @error('sku')--}}
+{{--                            <div class="text-danger">{{ $errors->first('sku') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="video">{{ __('main.video') }}</label> <!-- Translated Label -->
-                            <input type="url" name="video" class="form-control" id="video" placeholder="{{ __('main.enter_video') }}" value="{{ old('video') }}">
-                            @error('video')
-                            <div class="text-danger">{{ $errors->first('video') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="video">{{ __('main.video') }}</label> <!-- Translated Label -->--}}
+{{--                            <input type="url" name="video" class="form-control" id="video" placeholder="{{ __('main.enter_video') }}" value="{{ old('video') }}">--}}
+{{--                            @error('video')--}}
+{{--                            <div class="text-danger">{{ $errors->first('video') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
                         @foreach($langs as $index => $lang)
                             <div class="form-group">

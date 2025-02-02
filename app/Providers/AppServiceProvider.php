@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Admin\Contactus;
 use App\Models\Admin\OurClient;
+use App\Models\Admin\Product;
 use App\Models\Admin\Setting;
 use App\Models\Admin\SocialMedia;
 use Illuminate\Support\ServiceProvider;
@@ -32,7 +33,8 @@ class AppServiceProvider extends ServiceProvider
               $contact  = Contactus::first();
               $social   = SocialMedia::first();
               $clients  = OurClient::all();
-              \View::share(['settings' => $settings , 'contact'=>$contact , 'social'=>$social , 'clients'=>$clients]);
+              $products  = Product::with('gallery')->get();
+              \View::share(['settings' => $settings , 'contact_us'=>$contact , 'social'=>$social , 'clients'=>$clients , 'products'=>$products]);
 
     }
 }

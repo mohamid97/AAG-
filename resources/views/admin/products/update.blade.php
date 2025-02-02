@@ -60,45 +60,45 @@
                         </div>
                         <br>
 
-                        <div class="form-group">
-                            <label for="price">{{ __('main.price') }}</label>
-                            <input type="text" name="price" class="form-control" id="price" placeholder="{{ __('main.enter_price') }}" value="{{ $product->price }}">
-                            @error('price')
-                            <div class="text-danger">{{ $errors->first('price') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="price">{{ __('main.price') }}</label>--}}
+{{--                            <input type="text" name="price" class="form-control" id="price" placeholder="{{ __('main.enter_price') }}" value="{{ $product->price }}">--}}
+{{--                            @error('price')--}}
+{{--                            <div class="text-danger">{{ $errors->first('price') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="old_price">{{ __('main.old_price') }}</label>
-                            <input type="text" name="old_price" class="form-control" id="old_price" placeholder="{{ __('main.enter_old_price') }}" value="{{ $product->old_price }}">
-                            @error('old_price')
-                            <div class="text-danger">{{ $errors->first('old_price') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="old_price">{{ __('main.old_price') }}</label>--}}
+{{--                            <input type="text" name="old_price" class="form-control" id="old_price" placeholder="{{ __('main.enter_old_price') }}" value="{{ $product->old_price }}">--}}
+{{--                            @error('old_price')--}}
+{{--                            <div class="text-danger">{{ $errors->first('old_price') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="discount">{{ __('main.discount') }}</label>
-                            <input type="text" name="discount" class="form-control" id="discount" placeholder="{{ __('main.enter_discount') }}" value="{{ $product->discount }}">
-                            @error('discount')
-                            <div class="text-danger">{{ $errors->first('discount') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="discount">{{ __('main.discount') }}</label>--}}
+{{--                            <input type="text" name="discount" class="form-control" id="discount" placeholder="{{ __('main.enter_discount') }}" value="{{ $product->discount }}">--}}
+{{--                            @error('discount')--}}
+{{--                            <div class="text-danger">{{ $errors->first('discount') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="sku">{{ __('main.sku') }}</label>
-                            <input type="text" name="sku" class="form-control" id="sku" placeholder="{{ __('main.enter_sku') }}" value="{{ $product->sku }}">
-                            @error('sku')
-                            <div class="text-danger">{{ $errors->first('sku') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="sku">{{ __('main.sku') }}</label>--}}
+{{--                            <input type="text" name="sku" class="form-control" id="sku" placeholder="{{ __('main.enter_sku') }}" value="{{ $product->sku }}">--}}
+{{--                            @error('sku')--}}
+{{--                            <div class="text-danger">{{ $errors->first('sku') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
-                        <div class="form-group">
-                            <label for="video">{{ __('main.video') }}</label>
-                            <input type="video" name="video" class="form-control" id="video" placeholder="{{ __('main.enter_video') }}" value="{{ $product->video }}">
-                            @error('video')
-                            <div class="text-danger">{{ $errors->first('video') }}</div>
-                            @enderror
-                        </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="video">{{ __('main.video') }}</label>--}}
+{{--                            <input type="video" name="video" class="form-control" id="video" placeholder="{{ __('main.enter_video') }}" value="{{ $product->video }}">--}}
+{{--                            @error('video')--}}
+{{--                            <div class="text-danger">{{ $errors->first('video') }}</div>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
 
                         <div class="border p-3">
                             @foreach($langs as $index => $lang)
@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="custom-control custom-checkbox">
-                                        <input {{($category->star ? 'checked' : '')}} name="star" type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <input {{($product->star ? 'checked' : '')}} name="star" type="checkbox" class="custom-control-input" id="customCheck2">
                                         <label class="custom-control-label" for="customCheck2"></label>
                                     </div>
                                 </div>

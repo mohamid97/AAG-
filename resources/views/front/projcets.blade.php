@@ -30,7 +30,7 @@
                             <a href="#"  data-fancybox="" data-src="assets/img/slider/4.jpeg">
                                 <img src="{{asset('uploads/images/ourworks/'.$project->photo)}}" alt="Project-Image-01">
                             </a>
-                            <div class="card-body">O
+                            <div class="card-body">
                                 <div class="portfolio-icon">
                                     <div class="top-icon">
                                         <a href="project-details.html" class="portfolio-link">
@@ -38,8 +38,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="portfolio-content">
-                                    <h3 class="h4"><a href="project-details.html" class="text-white">{{$project->name}}</a></h3>
+                                <div class="portfolio-content"><span class="text-white"> </span>
+
+                                    <h3 class="h4"><a class="text-white" href="project-details.html">{{$project->name}}</a></h3>
                                 </div>
                             </div>
                         </div>
