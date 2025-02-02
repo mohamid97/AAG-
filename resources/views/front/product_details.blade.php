@@ -1,4 +1,13 @@
 @extends('front.layout.master')
+@section('meta_title')
+    {{ $settings->website_name }} | {{ isset($product->meta_title) ? strip_tags($product->meta_title) : strip_tags($product->des) }}
+@endsection
+
+@section('meta_description')
+    {{ strip_tags(isset($product->meta_des) ? $product->meta_des : $product->des) }}
+@endsection
+
+
 @section('styles')
 
     <div class="breadcumb-wrapper background-image" style="background-image: url('{{ asset('uploads/images/setting/' . $settings->service_details_breadcrumb_background) }}');">

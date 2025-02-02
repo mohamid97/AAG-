@@ -1,4 +1,15 @@
 @extends('front.layout.master')
+
+
+@section('meta_title')
+    {{$settings->website_name}} | المقالات
+@endsection
+
+@section('meta_description')
+    كل المقالات الموجوده في موقع {{$settings->website_name}}
+@endsection
+
+
 @section('styles')
     <style>
         .pagination-container {

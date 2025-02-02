@@ -1,5 +1,12 @@
 @extends('front.layout.master')
 
+@section('meta_title')
+    {{$settings->website_name}} | Home Page
+@endsection
+
+@section('meta_description')
+ This Is Home Page For {{$settings->website_name}} Website
+@endsection
 @section('content')
 
     <section class="full-screen py-0 top-position1">
@@ -104,7 +111,8 @@
                             </div>
                         </div>
 
-                        <div class="pt-2-3 border-top border-color-extra-light-gray d-sm-flex align-items-center"><a class="btn-style2 medium" href="{{route('about')}}">معرفه المزيد</a>
+                        <div class="pt-2-3 border-top border-color-extra-light-gray d-sm-flex align-items-center">
+                            <a class="btn-style2 medium" href="{{route('about')}}">معرفه المزيد</a>
 
                             <div class="d-flex align-items-center mt-4 mt-sm-0 me-sm-2-3">
                                 <div class="flex-shrink-0"></div>
@@ -152,7 +160,14 @@
                 @endforeach
 
             </div>
+
         </div>
+      <div style="display: flex;align-items: center;justify-content: center;margin-top: 50px">
+          <a class="btn-style2 medium" href="{{route('products')}}"> المزيد
+          </a>
+      </div>
+
+
     </section>
 
 
@@ -259,6 +274,14 @@
 
 
             </div>
+
+
+
+        </div>
+
+        <div style="display: flex;align-items: center;justify-content: center;margin-top: 50px">
+            <a class="btn-style2 medium" href="{{route('articles')}}"> المزيد
+            </a>
         </div>
     </section>
 

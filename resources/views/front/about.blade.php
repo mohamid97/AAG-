@@ -1,4 +1,11 @@
 @extends('front.layout.master')
+@section('meta_title')
+    {{ $settings->website_name }} | {{ strip_tags(isset($about->meta_title) ? $about->meta_title : 'About') }}
+@endsection
+
+@section('meta_description')
+    {{ strip_tags(isset($about->meta_des) ? $about->meta_des : $about->des) }}
+@endsection
 
 @section('content')
     <div class="breadcumb-wrapper background-image" style="background-image: url('{{ asset('uploads/images/setting/' . $settings->about_breadcrumb_background) }}');">

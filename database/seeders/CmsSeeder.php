@@ -20,7 +20,8 @@ class CmsSeeder extends Seeder
         for ($i = 1; $i <= 4; $i++) {
             $this->cms = DB::table('cms')->insertGetId([
                 'status' => 'active',
-                'image' => $i . '.jpg' // Include file extension in image name
+                'image' => $i . '.jpg' ,
+                'created_at'=>now()
             ]);
 
             DB::table('cms_translations')->insert([
@@ -45,19 +46,7 @@ class CmsSeeder extends Seeder
                 ],
             ]);
 
-            DB::table('cms_translations')->insert([
-                [
-                    'cms_id' => $this->cms,
-                    'locale' => 'en',
-                    'name' => 'Slider Number ' . $i,
-                    'alt_image' => 'alt_image Number ' . $i,
-                    'title_image' => 'title_image Number ' . $i,
-                    'meta_des' => ' meta descrition Number ' . $i,
-                    'meta_title' => ' meta title Number ' . $i,
-                    'des'  => 'Description Number This Is Descrption Number ' . $i,
-                    'slug' =>'Slug Number One',
-                ],
-            ]);
+
         }
     }
 }

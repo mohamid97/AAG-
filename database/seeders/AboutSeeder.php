@@ -38,19 +38,7 @@ class AboutSeeder extends Seeder
 
         ]);
 
-        DB::table('about_translations')->insert([
-            [
-                'about_id' => About::first()->id,
-                'locale'=>'en',
-                'des'=>'fdsfdsf',
-                'name'=>'fdfdfd@f',
-                'meta_title'=>'This is meta Title',
-                'meta_des'=>'This is Meta des',
-                'alt_image'=>'This is Meta des',
-                'title_image'=>'This is Meta des'
-            ],
 
-        ]);
 
     }
 }

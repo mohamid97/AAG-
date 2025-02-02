@@ -37,18 +37,7 @@ class ProjectsSeeder extends Seeder
                 ],
             ]);
 
-            DB::table('ourwork_translations')->insert([
-                [
-                    'ourwork_id' => $this->project,
-                    'locale' => 'en',
-                    'name' => 'المشروع رقم ' . $i,
-                    'alt_image' => 'تعريف الصوره رقم ' . $i,
-                    'title_image' => 'title_image Number ' . $i,
-                    'meta_des' => 'وصف صغير للمشروع رقم ' . $i,
-                    'meta_title' => 'وصف صغير للمشروع رقم ' . $i,
-                    'des' => ' وصف كبير للمشروع رقم ' . $i,
-                ],
-            ]);
+
         }
     }
 }

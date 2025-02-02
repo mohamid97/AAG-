@@ -1,4 +1,11 @@
 @extends('front.layout.master')
+@section('meta_title')
+    {{ $settings->website_name }} | {{ strip_tags(isset($contact->meta_title) ? $contact->meta_title : 'اتصل بنا') }}
+@endsection
+
+@section('meta_description')
+    {{ strip_tags(isset($contact->meta_des) ? $contact->meta_des : $contact->des) }}
+@endsection
 
 @section('content')
 

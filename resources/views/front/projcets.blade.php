@@ -1,5 +1,13 @@
 @extends('front.layout.master')
+@section('meta_title')
+    {{$settings->website_name}} |
+    مشاريعنا
+@endsection
 
+@section('meta_description')
+    كل الفمشاريع الخاصه ب
+    {{$settings->website_name}}
+@endsection
 @section('content')
 
     <div class="breadcumb-wrapper background-image" style="background-image: url('{{ asset('uploads/images/setting/' . $settings->our_work_breadcrumb_background) }}');">

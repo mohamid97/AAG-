@@ -5,7 +5,7 @@
                 <h3 class="title">متخصصون في تصميم وتنفيذ جميع اعمال الزجاج بأفضل الخامات وأحسن الأسعار</h3>
             </div>
 
-            <div class="btn-box"><a class="theme-btn btn-style-three" href="{{route('products')}}l"><span class="btn-title">خدمات اكثر</span></a></div>
+            <div class="btn-box"><a class="theme-btn btn-style-three" href="{{route('products')}}"><span class="btn-title">خدمات اكثر</span></a></div>
         </div>
     </div>
 </section>
@@ -19,7 +19,7 @@
             <div class="row"><!--Footer Column-->
                 <div class="footer-column col-xl-3 col-sm-6">
                     <div class="footer-widget about-widget">
-                        <div class="logo"><a href="index.html"><img alt="" src="{{asset('uploads/images/setting/' . $settings->logo)}}" /></a></div>
+                        <div class="logo"><a href="{{route('home')}}"><img alt="" src="{{asset('uploads/images/setting/' . $settings->logo)}}" /></a></div>
                     </div>
                 </div>
                 <!--Footer Column-->

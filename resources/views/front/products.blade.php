@@ -1,4 +1,14 @@
 @extends('front.layout.master')
+
+@section('meta_title')
+    {{ $settings->website_name }} |
+    خدماتنا
+@endsection
+
+@section('meta_description')
+   كل الخدمات الموجوده لدينا في
+   {{ $settings->website_name }}
+@endsection
 @section('styles')
     <style>
         .pagination-container {

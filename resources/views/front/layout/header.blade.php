@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A A G</title>
+    <title>@yield('meta_title', 'A A G')</title>
+    <meta name="description" content="@yield('meta_description', 'This is AAG')">
     <link href="{{ asset('front/assets/css/size.css') }}" rel="stylesheet" />
     <link href="{{ asset('front/assets/css/style.css') }}" rel="stylesheet" />
     <!-- Font Awesome CDN -->

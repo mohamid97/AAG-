@@ -1,5 +1,18 @@
 @extends('front.layout.master')
 
+
+@section('meta_title')
+    {{ $settings->website_name }} | {{ strip_tags(isset($article->meta_title) ? $article->meta_title : $article->des) }}
+@endsection
+
+@section('meta_description')
+    {{ strip_tags(isset($article->meta_des) ? $article->meta_des : $article->des) }}
+@endsection
+
+
+
+
+
 @section('content')
 
 
