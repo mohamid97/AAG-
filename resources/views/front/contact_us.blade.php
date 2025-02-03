@@ -80,7 +80,12 @@
                             @enderror
                         </div>
 
-                        <div class="button ">
+                        <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                        @error('g-recaptcha-response')
+                        <p><small class="text-danger">{{ $message }}</small></p>
+                        @enderror
+
+                        <div class="button" style="margin-top:30px">
                             <button class="btn-style2 medium" type="submit">ارسال</button>
                         </div>
                     </form>
@@ -91,6 +96,14 @@
 
 
 
+
+
+@endsection
+
+
+
+@section('scripts')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 @endsection

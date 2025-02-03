@@ -20,6 +20,7 @@ use App\Models\SliderSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Http;
 
 
 class HomeController extends Controller
@@ -95,8 +96,23 @@ class HomeController extends Controller
                 'name' => 'nullable|string|max:255',
                 'email' => 'nullable|email|unique:users,email',
                 'phone' => 'required|regex:/^01[0-2,5]{1}[0-9]{8}$/',
-                'message'=>'required|string|max:2024'
+                'message'=>'required|string|max:2024',
+                'g-recaptcha-response'=>'required'
             ]);
+
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret_key'),
+            'response' => $request->input('g-recaptcha-response'),
+            'remoteip' => $request->ip(),
+        ]);
+
+        $responseData = $response->json();
+        if(!$responseData['success']){
+            return back()->withErrors(['g-recaptcha-response' => 'فشل التحقق من أنك لست روبوتًا'])->withInput();
+
+        }
+
 
             try{
 
